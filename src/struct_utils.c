@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_struct_creator.c                                :+:      :+:    :+:   */
+/*   struct_creator.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 09:19:19 by ysaikhuj          #+#    #+#             */
-/*   Updated: 2026/02/12 23:42:37 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/13 18:48:57 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,17 +65,27 @@ void	ft_delone(t_stack *stack, t_node *node)
 	free(node);
 	stack->size--;
 }
-void	free_matrix(char **str)
+void	free_stack(t_stack *stack)
 {
-	int	i;
+	t_node	*temp;
+	t_node	*next;
+	int		i;
 
+	if (!stack || stack->size == 0)
+		return;
+	temp = stack->top;
 	i = 0;
-	if (!str)
-		return ;
-	while (str[i])
+	while (i < stack->size)
 	{
-		free(str[i]);
+		next = temp->next;
+		free(temp);
+		temp = next;
 		i++;
 	}
-	free(str);
+	free(stack);
+}
+void	init_stack(t_stack *stack)
+{
+	stack->top = NULL;
+	stack->size = 0;
 }
