@@ -6,7 +6,7 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 19:59:43 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/14 21:10:22 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/15 00:05:40 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,33 @@ long	ft_atol(const char *nptr, int *error)
 		result = (result * 10) + (nptr[i++] - '0');
 	}
 	return (result * sign);
+}
+int	is_number(char *str)
+{
+	int	i;
+
+	if (!str)
+		return (0);
+
+	i = 0;
+
+	// Baştaki boşlukları atla
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		i++;
+
+	if (str[i] == '+' || str[i] == '-')
+		i++;
+
+	if (!str[i])
+		return (0);
+
+	while (str[i])
+	{
+		if (!ft_isdigit(str[i]))
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
 int	add_number_to_stack(t_stack **a, char *str)

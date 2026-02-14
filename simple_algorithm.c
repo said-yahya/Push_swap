@@ -6,7 +6,7 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 20:17:11 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/14 22:54:40 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/15 00:09:29 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,9 @@ void sort_three(t_control *ctrl)
 }
 void sort_simple(t_stack *a, t_stack *b, t_control *ctrl)
 {
+	ctrl->b = b;
 	if (a->size == 2)
 		sa(a, 1, ctrl);
 	else if (a->size == 3)
-		sort_three(a);
+		sort_three(ctrl);
 }

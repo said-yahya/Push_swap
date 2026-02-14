@@ -6,7 +6,7 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 01:06:05 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/14 22:57:20 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/15 00:26:25 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,12 @@ add_number_to_stack içinde yakalamak için lazım
 */
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+/* int	main(int ac, char **av)
 {
 	t_stack		*a;
 	t_stack		*b;
 	t_control	ctrl;
-	/* float		disorder; */
+	float		disorder; 
 
 	a = (t_stack *)malloc(sizeof(t_stack));
 	b = (t_stack *)malloc(sizeof(t_stack));
@@ -60,4 +60,25 @@ int	main(int ac, char **av)
 	free_stack(a);
 	free_stack(b);
 	return (0);
+}*/
+
+int main(int ac, char **av)
+{
+    t_control   ctrl;
+
+    if (ac < 2)
+        return (0);
+    init_control(&ctrl);
+    if (!ctrl.a || !ctrl.b)
+        return (1);
+
+    if (!parse_and_fill_stack(&(ctrl.a), ac, av, &ctrl))
+    {
+        write(2, "Error\n", 6);
+        return (1);
+    }
+    run_adaptive_strategy(ctrl.a, ctrl.b, &ctrl);
+    free_stack(ctrl.a);
+    free_stack(ctrl.b);
+    return (0);
 }

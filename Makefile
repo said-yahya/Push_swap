@@ -1,7 +1,7 @@
 NAME        = push_swap
 
 CC          = cc
-CFLAGS      = -Wall -Wextra -Werror -I.
+CFLAGS      = -Wall -Wextra -Werror -I. -Ilibft
 
 SRCS        = main.c \
               operations_push.c \
@@ -16,18 +16,26 @@ SRCS        = main.c \
 
 OBJS        = $(SRCS:.c=.o)
 
+LIBFT_DIR   = libft
+LIBFT       = $(LIBFT_DIR)/libft.a
+
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+$(NAME): $(OBJS) $(LIBFT)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+
+$(LIBFT):
+	make -C $(LIBFT_DIR)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
+	make -C $(LIBFT_DIR) clean
 	rm -f $(OBJS)
 
 fclean: clean
+	make -C $(LIBFT_DIR) fclean
 	rm -f $(NAME)
 
 re: fclean all

@@ -6,7 +6,7 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 17:31:22 by ysaikhuj          #+#    #+#             */
-/*   Updated: 2026/02/14 22:56:59 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/15 00:10:47 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
-
+# include "Libft/libft.h"
 typedef struct s_node
 {
 	int				value;
@@ -73,4 +73,7 @@ int		add_number_to_stack(t_stack **a, char *str);
 int		parse_and_fill_stack(t_stack **a, int ac, char **av, t_control *ctrl);
 void	run_adaptive_strategy(t_stack *a, t_stack *b, t_control *ctrl);
 int		process_argument_strings(t_stack **a, char *av);
+
+void sort_simple(t_stack *a, t_stack *b, t_control *ctrl);
+
 #endif
