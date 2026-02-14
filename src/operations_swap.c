@@ -6,7 +6,7 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 01:05:38 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/13 18:57:29 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/14 02:58:53 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,24 +52,27 @@ void	swap(t_stack *stack)
 	stack->top = second;
 }
 
-void	sa(t_stack *a, int print)
+void	sa(t_stack *a, int print, t_control *ctrl)
 {
 	swap(a);
 	if (print)
 		write(1, "sa\n", 3);
+	ctrl->op_count++;
 }
 
-void	sb(t_stack *b, int print)
+void	sb(t_stack *b, int print, t_control *ctrl)
 {
 	swap(b);
 	if (print)
 		write(1, "sb\n", 3);
+	ctrl->op_count++;
 }
 
-void	ss(t_stack *a, t_stack *b, int print)
+void	ss(t_stack *a, t_stack *b, int print, t_control *ctrl)
 {
 	swap(a);
 	swap(b);
 	if (print)
 		write(1, "ss\n", 3);
+	ctrl->op_count++;
 }

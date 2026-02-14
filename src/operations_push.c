@@ -6,7 +6,7 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 15:07:18 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/13 18:49:43 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/14 02:54:07 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,16 +80,19 @@ void	push(t_stack *to, t_stack *from)
 	push_to_stack(to, node);
 }
 
-void	pa(t_stack *a, t_stack *b, int print)
+void	pa(t_stack *a, t_stack *b, int print, t_control *control)
 {
 	push(a, b);
 	if (print)
 		write(1, "pa\n", 3);
+	control->op_count++;
 }
 
-void	pb(t_stack *a, t_stack *b, int print)
+void	pb(t_stack *a, t_stack *b, int print, t_control *control)
 {
 	push(b, a);
 	if (print)
 		write(1, "pb\n", 3);
+	control->op_count++;
+	
 }
