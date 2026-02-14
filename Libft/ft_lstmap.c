@@ -6,7 +6,7 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/10 22:19:31 by edpolat           #+#    #+#             */
-/*   Updated: 2026/01/10 22:41:35 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/01/31 11:06:43 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,13 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		lst = lst->next;
 	}
 	return (list);
+}
+
+void	*add_one(void *x)
+{
+	int	*n;
+
+	n = malloc(sizeof(int));
+	*n = *(int *)x + 1;
+	return (n);
 }

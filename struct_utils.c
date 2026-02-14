@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   struct_creator.c                                   :+:      :+:    :+:   */
+/*   struct_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 09:19:19 by ysaikhuj          #+#    #+#             */
-/*   Updated: 2026/02/13 18:48:57 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/14 14:20:07 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ void	ft_delone(t_stack *stack, t_node *node)
 	free(node);
 	stack->size--;
 }
+
 void	free_stack(t_stack *stack)
 {
 	t_node	*temp;
@@ -72,7 +73,7 @@ void	free_stack(t_stack *stack)
 	int		i;
 
 	if (!stack || stack->size == 0)
-		return;
+		return ;
 	temp = stack->top;
 	i = 0;
 	while (i < stack->size)
@@ -84,6 +85,7 @@ void	free_stack(t_stack *stack)
 	}
 	free(stack);
 }
+
 void	init_stack(t_stack *stack)
 {
 	stack->top = NULL;

@@ -6,16 +6,16 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 20:02:31 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/13 20:04:09 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/14 18:12:43 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int parse_and_fill_stack(t_stack **a, int ac, char **av, t_control *ctrl)
+int	parse_and_fill_stack(t_stack **a, int ac, char **av, t_control *ctrl)
 {
-	int i;
-	int flag_res;
+	int	i;
+	int	flag_res;
 
 	i = 1;
 	while (i < ac)
@@ -26,7 +26,7 @@ int parse_and_fill_stack(t_stack **a, int ac, char **av, t_control *ctrl)
 		if (flag_res == 1)
 		{
 			i++;
-			continue;
+			continue ;
 		}
 		if (!process_argument_strings(a, av[i]))
 			return (0);
@@ -35,10 +35,10 @@ int parse_and_fill_stack(t_stack **a, int ac, char **av, t_control *ctrl)
 	return (1);
 }
 
-int is_duplicate(t_stack *stack, int value)
+int	is_duplicate(t_stack *stack, int value)
 {
-	t_node *temp;
-	int i;
+	t_node	*temp;
+	int		i;
 
 	if (!stack || stack->size == 0)
 		return (0);
@@ -54,13 +54,13 @@ int is_duplicate(t_stack *stack, int value)
 	return (0);
 }
 
-void free_matrix(char **str)
+void	free_matrix(char **str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!str)
-		return;
+		return ;
 	while (str[i])
 	{
 		free(str[i]);
@@ -75,8 +75,7 @@ void	init_control(t_control *ctrl)
 	ctrl->a = (t_stack *)malloc(sizeof(t_stack));
 	ctrl->b = (t_stack *)malloc(sizeof(t_stack));
 	if (!ctrl->a || !ctrl->b)
-		return;/*  Hata yönetimi burada yapılabilir */
-/* 	2. Stack'leri temizle (Sıfır noktası) */
+		return ;
 	ctrl->a->top = NULL;
 	ctrl->a->size = 0;
 	ctrl->b->top = NULL;
@@ -86,4 +85,3 @@ void	init_control(t_control *ctrl)
 	ctrl->op_count = 0;
 	ctrl->disorder = 0.0;
 }
-

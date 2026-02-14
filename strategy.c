@@ -6,15 +6,16 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 20:04:23 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/13 20:05:17 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/14 20:20:57 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void run_adaptive_strategy(t_stack *a, t_stack *b, t_control *ctrl)
+void	run_adaptive_strategy(t_stack *a, t_stack *b, t_control *ctrl)
 {
-	float disorder;
+	float	disorder;
+
 
 	disorder = disorder_calculate(a);
 	if (disorder == 0.0)
@@ -27,13 +28,13 @@ void run_adaptive_strategy(t_stack *a, t_stack *b, t_control *ctrl)
 		sort_complex(a, b);
 }
 
-static float mistake_calculater(t_stack *stack)
+static float	mistake_calculater(t_stack *stack)
 {
-	t_node *a;
-	t_node *b;
-	int i;
-	int j;
-	float mistakes;
+	t_node	*a;
+	t_node	*b;
+	int		i;
+	int		j;
+	float	mistakes;
 
 	mistakes = 0;
 	a = stack->top;
@@ -55,11 +56,11 @@ static float mistake_calculater(t_stack *stack)
 	return (mistakes);
 }
 
-float disorder_calculate(t_stack *stack)
+float	disorder_calculate(t_stack *stack)
 {
-	float mistakes;
-	float total;
-	int x;
+	float	mistakes;
+	float	total;
+	int		x;
 
 	if (!stack || stack->size < 2)
 		return (0.0);

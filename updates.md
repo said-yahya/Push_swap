@@ -16,4 +16,11 @@ ENP-13.02.2026
 
 **--simple, --medium, --comlex, --adaptive flagleri argümanda veriliyor, bunları verdiğinde o algoritmaya yönlendirecekmişiz**
 
-ra, rb, rr, rra, rrb, rrr fonksyonları eklendi
+14.02.2026
+**--bench de ayrı bir flag olarak alınacakmış, bu kısmı sana bıraktım, t_control yapısı içinde operasyon hesaplayan bi int var ama her operasyon için de ayrı ayrı bir şey de eklememiz lazım sanırım, o yapıyı bir incele.**
+
+reverse-rotate operasyonlarını da yazıp simple algoritmayı yazmaya başlıyorum.
+
+
+Complex -- Turc Algorithm
+

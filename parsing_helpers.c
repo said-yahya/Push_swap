@@ -6,12 +6,13 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 19:59:43 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/13 20:01:41 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/14 21:10:22 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
-int handle_flags(char *arg, t_control *ctrl)
+#include "push_swap.h"
+
+int	handle_flags(char *arg, t_control *ctrl)
 {
 	if (ft_strncmp(arg, "--", 2) != 0)
 		return (0);
@@ -27,46 +28,50 @@ int handle_flags(char *arg, t_control *ctrl)
 		ctrl->mode = 0;
 	else
 		return (-1);
-
 	return (1);
 }
 
-long ft_atol(const char *nptr)
+long	ft_atol(const char *nptr, int *error)
 {
-	long result;
-	long sign;
-	int i;
+	long	result;
+	long	sign;
+	int		i;
 
+	*error = 1;
 	result = 0;
 	sign = 1;
 	i = 0;
 	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
 		i++;
-	// İşaret kontrolü
 	if (nptr[i] == '-' || nptr[i] == '+')
 	{
-		if (nptr[i] == '-')
+		if (nptr[i++] == '-')
 			sign = -1;
-		i++;
 	}
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		result = (result * 10) + (nptr[i] - '0');
-		i++;
+		if (result > (LONG_MAX - (nptr[i] - '0')) / 10)
+		{
+			*error = 0;
+			return (0);
+		}
+		result = (result * 10) + (nptr[i++] - '0');
 	}
 	return (result * sign);
 }
-int add_number_to_stack(t_stack **a, char *str)
+
+int	add_number_to_stack(t_stack **a, char *str)
 {
-	long value;
-	t_node *new;
+	long	value;
+	t_node	*new;
+	int		error;
 
 	if (!is_number(str))
 		return (0);
 	if (!str || !a || !*a)
 		return (0);
-	value = ft_atol(str);
-	if (value < INT_MIN || value > INT_MAX)
+	value = ft_atol(str, &error);
+	if (value < INT_MIN || value > INT_MAX || !error)
 		return (0);
 	if (is_duplicate(*a, (int)value))
 		return (0);
@@ -77,10 +82,10 @@ int add_number_to_stack(t_stack **a, char *str)
 	return (1);
 }
 
-int process_argument_strings(t_stack **a, char *av)
+int	process_argument_strings(t_stack **a, char *av)
 {
-	char **temp_args;
-	int j;
+	char	**temp_args;
+	int		j;
 
 	temp_args = ft_split(av, ' ');
 	if (!temp_args || !temp_args[0])

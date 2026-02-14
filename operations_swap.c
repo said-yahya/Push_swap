@@ -6,7 +6,7 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 01:05:38 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/14 02:58:53 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/14 14:13:50 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ void	swap(t_stack *stack)
 	t_node	*last;
 
 	if (!stack || stack->size < 2)
-		return;
+		return ;
 	else if (stack->size == 2)
 	{
 		stack->top = stack->top->next;
-		return;
+		return ;
 	}
 	first = stack->top;
 	second = first->next;

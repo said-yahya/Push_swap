@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/10 20:52:14 by edpolat           #+#    #+#             */
-/*   Updated: 2026/01/22 11:14:06 by edpolat          ###   ########.fr       */
+/*   Created: 2026/01/23 16:18:42 by edpolat           #+#    #+#             */
+/*   Updated: 2026/01/23 20:04:46 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <fcntl.h>
 
-void	ft_lstdelone(t_list *lst, void (*del)(void*))
+int	main(void)
 {
-	if (!lst || !del)
-		return ;
-	(*del)(lst->content);
-	free(lst);
+	char	a[] = "abcde";
+	char	b[] = "abcde";
+
+	ft_memmove(a + 2, a, 3);
+	ft_memcpy(b + 2, b, 3);
+	printf(" move : %s \n cpy : %s", a, b);
 }

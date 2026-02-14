@@ -2,56 +2,57 @@
 
 # Libft
 
-## Description
+## Açıklama
 
-Libft is a static library project where commonly used standard functions are reimplemented
-in the C language. The purpose of the project is to learn the basic structures of C,
-memory management, pointer usage, and the fundamentals of programming logic.
+Libft, C dilinde sık kullanılan standart fonksiyonların yeniden yazıldığı
+bir statik kütüphane projesidir. Projenin amacı, C dilinin temel yapılarını,
+bellek yönetimini, pointer kullanımını ve programlama mantığının temellerini öğrenmektir.
 
-## Instructions
 
-### Compilation
+## Talimatlar
 
-To compile the library, use the following command:
+### Derleme
+
+Kütüphaneyi derlemek için aşağıdaki komut kullanılır:
 
 ```bash
 make
 ```
-As a result, a static library named libft.a is created, allowing the written functions
-to be used in other projects.
 
-### Cleaning
+Bu işlem sonucunda `libft.a` adında, yazılan fonksiyonların başka projelerde kullanılmasını sağlayan bir statik kütüphane oluşturulur.
 
-To remove object (.o) files:
+### Temizlik
+
+Object (`.o`) dosyalarını silmek için:
 
 ```bash
 make clean
 ```
 
-To remove object files together with the libft.a file:
+Object dosyalarıyla birlikte `libft.a` dosyasını da silmek için:
 
 ```bash
 make fclean
 ```
 
-To remove everything and rebuild the project from scratch:
+Her şeyi silip projeyi baştan derlemek için:
 
 ```bash
 make re
 ```
 
-## Library Contents
+## Kütüphane İçeriği
 
-libft.a contains the following functions:
+`libft.a` aşağıdaki fonksiyonları içerir:
 
-### Character Check Functions
+### Karakter Kontrol Fonksiyonları
 - ft_isalpha
 - ft_isdigit
 - ft_isalnum
 - ft_isascii
 - ft_isprint
 
-### String Functions
+### String Fonksiyonları
 - ft_strlen
 - ft_strlcpy
 - ft_strlcat
@@ -66,7 +67,8 @@ libft.a contains the following functions:
 - ft_split
 - ft_strmapi
 - ft_striteri
-### Memory Functions
+
+### Bellek (Memory) Fonksiyonları
 - ft_memset
 - ft_bzero
 - ft_memcpy
@@ -75,14 +77,14 @@ libft.a contains the following functions:
 - ft_memcmp
 - ft_calloc
 
-### Conversion and Output Functions
+### Dönüşüm ve Çıktı Fonksiyonları
 - ft_itoa
 - ft_putchar_fd
 - ft_putstr_fd
 - ft_putendl_fd
 - ft_putnbr_fd
 
-### Linked List Functions
+### Linked List Fonksiyonları
 - ft_lstnew
 - ft_lstadd_front
 - ft_lstadd_back
@@ -93,21 +95,21 @@ libft.a contains the following functions:
 - ft_lstiter
 - ft_lstmap
 
-## Usage
+## Kullanım
 
-To use the library in another project:
+Kütüphaneyi başka bir projede kullanmak için:
 
 ```bash
 cc main.c libft.a
 ```
 
-or:
+veya:
 
 ```bash
 cc main.c -L. -lft
 ```
 
-The header file must be included in the source file:
+Kaynak dosyada header eklenmelidir:
 
 ```c
 #include "libft.h"
@@ -115,22 +117,23 @@ The header file must be included in the source file:
 
 
 
-## Resources
+## Kaynaklar
 
-### References
-- man pages
+### Referanslar
+- `man` sayfaları
 
-### Use of Artificial Intelligence
+### Yapay Zekâ Kullanımı
 
-During this project, artificial intelligence tools were used for:
-- Understanding the C compilation process (compile, assemble, link)
-- Learning the structure of a Makefile
-- Explaining the behavior of standard C functions
+Bu proje sırasında yapay zekâ araçları:
+- C derleme sürecinin (compile, assemble, link) anlaşılması
+- Makefile yapısının öğrenilmesi
+- Standart C fonksiyonlarının davranışlarının açıklanması
 
-All function implementations and final decisions were made by the project owner.
+amacıyla kullanılmıştır. Fonksiyonların tüm implementasyonları ve
+nihai kararlar proje sahibi tarafından yapılmıştır.
 
 ---
 
-## Author
+## Yazar
 
 edpolat

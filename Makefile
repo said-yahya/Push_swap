@@ -1,24 +1,34 @@
-NAME 	= libftprintf.a
-CC 		= cc
-CFLAGS 	= -Wall -Werror -Wextra
-AR 		= ar rcs
-RM		= rm -f
+NAME        = push_swap
 
-SRCS 	= 
+CC          = cc
+CFLAGS      = -Wall -Wextra -Werror -I.
 
-		  
-OBJS	= $(SRCS:.c=.o)
+SRCS        = main.c \
+              operations_push.c \
+              operations_reverse.c \
+              operations_rotate.c \
+              operations_swap.c \
+              parsing_helpers.c \
+              parsing_main.c \
+              simple_algorithm.c \
+              strategy.c \
+              struct_utils.c
 
-$(NAME): $(OBJS)
-		$(AR) $(NAME) $(OBJS)
+OBJS        = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-clean: 
-		$(RM) $(OBJS)
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	rm -f $(OBJS)
 
 fclean: clean
-		$(RM) $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 
