@@ -15,3 +15,5 @@ ENP-13.02.2026
 -verilen sayılar içinde INT_MAX-INT_MIN aralığı dışında bir sayı varsa hata vermeliymiş.
 
 **--simple, --medium, --comlex, --adaptive flagleri argümanda veriliyor, bunları verdiğinde o algoritmaya yönlendirecekmişiz**
+
+ra, rb, rr, rra, rrb, rrr fonksyonları eklendi
