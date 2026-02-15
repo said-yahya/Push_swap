@@ -6,7 +6,7 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 09:19:19 by ysaikhuj          #+#    #+#             */
-/*   Updated: 2026/02/14 14:20:07 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/15 15:03:34 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,3 +91,32 @@ void	init_stack(t_stack *stack)
 	stack->top = NULL;
 	stack->size = 0;
 }
+
+/* void indexing(t_stack *stack)
+{
+	t_node *curr;
+	t_node *compare;
+	int i;
+	int j;
+	int idx;
+
+	curr = stack->top;
+	i = 0;
+	while (i < stack->size)
+	{
+		idx = 0;
+		compare = stack->top;
+		j = 0;
+		while (j < stack->size)
+		{
+			if (curr->value > compare->value)
+				idx++;
+			compare = compare->next;
+			j++;
+		}
+		curr->index = idx;
+		curr = curr->next;
+		i++;
+	}
+}
+ */

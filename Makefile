@@ -10,13 +10,13 @@ SRCS        = main.c \
               operations_swap.c \
               parsing_helpers.c \
               parsing_main.c \
-              simple_algorithm.c \
+              algorithm_simple.c \
               strategy.c \
               struct_utils.c
 
 OBJS        = $(SRCS:.c=.o)
 
-LIBFT_DIR   = libft
+LIBFT_DIR   = Libft
 LIBFT       = $(LIBFT_DIR)/libft.a
 
 all: $(NAME)

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   simple_algorithm.c                                 :+:      :+:    :+:   */
+/*   algorithm_simple.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 20:17:11 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/15 00:09:29 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/15 13:49:31 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,38 +20,54 @@ sıralanmış halde oluyor. en son a'ya geri yollasın şeklinde bir algoritma
 tasarladım kafamda. Normalde de varmış, selection/min extraction adaptasyon oluyomuş.
 */
 
-void sort_three(t_control *ctrl)
+int finder_minimum(t_control *ctrl)
 {
-	int x;
-	int y;
-	int z;
-
-	x = ctrl->a->top->value;
-	y = ctrl->a->top->next->value;
-	z = ctrl->a->top->next->next->value;
-
-	if (x > y && y < z && x < z)
-		sa(ctrl->a, 1, ctrl);
-	else if (x > y && y > z && x > z)
+	t_node *temp;
+	int min;
+	int size;
+	int i;
+	int j;
+	j = ctrl->a->size;
+	size = 0;
+	i = 0;
+	min = ctrl->a->top->value;
+	temp = ctrl->a->top;
+	while (i <= j)
 	{
-		sa(ctrl->a, 1, ctrl);
-		rra(ctrl->a, 1, ctrl);
+		if (min > temp->value)
+		{
+			min = temp->value;
+			size = i;
+		}
+		temp = temp->next;
+		i++;
 	}
-	else if (x > y && y < z && x > z)
-		ra(ctrl->a, 1, ctrl);
-	else if (x < y && y > z && x < z)
-	{
-		sa(ctrl->a, 1, ctrl);
-		ra(ctrl->a, 1, ctrl);
-	}
-	else if (x < y && y > z && x > z)
-		rra(ctrl->a, 1, ctrl);
+	return (size);
 }
-void sort_simple(t_stack *a, t_stack *b, t_control *ctrl)
+
+void sort_simple(t_control *ctrl)
 {
-	ctrl->b = b;
-	if (a->size == 2)
-		sa(a, 1, ctrl);
-	else if (a->size == 3)
-		sort_three(ctrl);
+	int finder_size;
+
+	while (ctrl->a->top)
+	{
+		finder_size = finder_minimum(ctrl);
+		if (finder_size != 0)
+		{
+			if (finder_size <= ctrl->a->size / 2)
+			{
+				while (finder_size-- > 0)
+					ra(ctrl->a, 1, ctrl);
+			}
+			else
+			{
+				finder_size = ctrl->a->size - finder_size;
+				while (finder_size-- > 0)
+					rra(ctrl->a, 1, ctrl);
+			}
+		}
+		pb(ctrl->a, ctrl->b, 1, ctrl);
+	}
+	while (ctrl->b->top)
+		pa(ctrl->a, ctrl->b, 1, ctrl);
 }

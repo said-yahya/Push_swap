@@ -6,7 +6,7 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 19:59:43 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/15 00:05:40 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/15 11:23:37 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ int	is_number(char *str)
 
 	i = 0;
 
-	// Baştaki boşlukları atla
 	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 		i++;
 
