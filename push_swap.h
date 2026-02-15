@@ -1,14 +1,14 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: macbook <macbook@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 17:31:22 by ysaikhuj          #+#    #+#             */
-/*   Updated: 2026/02/15 13:33:15 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/15 20:02:53 by macbook          ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
@@ -46,6 +46,7 @@ t_node	*ft_newnode(int value);
 void	ft_addback(t_stack *stack, t_node *new);
 void	ft_delone(t_stack *stack, t_node *node);
 void	free_matrix(char **str);
+void	indexing(t_stack *stack);
 
 void	swap(t_stack *stack);
 void	sa(t_stack *a, int print, t_control *ctrl);
@@ -77,5 +78,6 @@ void	run_adaptive_strategy(t_control *ctrl);
 int		process_argument_strings(t_stack **a, char *av);
 
 void	sort_simple(t_control *ctrl);
+void sort_medium(t_control *ctrl);
 
 #endif

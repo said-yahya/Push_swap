@@ -12,7 +12,8 @@ SRCS        = main.c \
               parsing_main.c \
               algorithm_simple.c \
               strategy.c \
-              struct_utils.c
+              struct_utils.c \
+              algorithm_medium.c
 
 OBJS        = $(SRCS:.c=.o)
 
