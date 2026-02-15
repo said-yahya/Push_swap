@@ -6,7 +6,7 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 19:59:43 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/15 11:23:37 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/16 01:52:26 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ int	process_argument_strings(t_stack **a, char *av)
 	temp_args = ft_split(av, ' ');
 	if (!temp_args || !temp_args[0])
 	{
-		free_matrix(temp_args);
+			free_matrix(temp_args);
 		return (0);
 	}
 	j = 0;
