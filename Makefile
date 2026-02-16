@@ -3,18 +3,20 @@ NAME        = push_swap
 CC          = cc
 CFLAGS      = -Wall -Wextra -Werror -I. -Ilibft
 
-SRCS        = main.c \
-              operations_push.c \
-              operations_reverse.c \
-              operations_rotate.c \
-              operations_swap.c \
-              parsing_helpers.c \
-              parsing_main.c \
-              algorithm_simple.c \
-              strategy.c \
-              struct_utils.c \
-              algorithm_medium.c
-
+SRCS    = main.c \
+          operations_push.c \
+          operations_reverse.c \
+          operations_rotate.c \
+          operations_swap.c \
+          parsing_helpers.c \
+          parsing_main.c \
+          algorithm_simple.c \
+          strategy.c \
+          struct_utils.c \
+          algorithm_medium.c\
+          algorithm_complex.c\
+          algorithm_complex2.c\
+          
 OBJS        = $(SRCS:.c=.o)
 
 LIBFT_DIR   = Libft

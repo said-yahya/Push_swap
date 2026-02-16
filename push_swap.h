@@ -1,14 +1,14 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: macbook <macbook@student.42.fr>            +#+  +:+       +#+        */
+/*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 17:31:22 by ysaikhuj          #+#    #+#             */
-/*   Updated: 2026/02/15 20:02:53 by macbook          ###   ########.fr       */
+/*   Updated: 2026/02/16 05:31:25 by edpolat          ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
@@ -78,6 +78,15 @@ void	run_adaptive_strategy(t_control *ctrl);
 int		process_argument_strings(t_stack **a, char *av);
 
 void	sort_simple(t_control *ctrl);
-void sort_medium(t_control *ctrl);
+void	sort_medium(t_control *ctrl);
+void	sort_complex(t_control *ctrl);
+void	merge_sort_a(t_control *ctrl, int size);
+void	merge_sort_b(t_control *ctrl, int size);
+void	merge_to_a(t_control *ctrl, int left, int right);
+void	merge_to_b(t_control *ctrl, int left, int right);
+void	sort_three(t_control *ctrl);
+void	sort_three_b(t_control *ctrl);
+
+
 
 #endif

@@ -1,14 +1,14 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   strategy.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: macbook <macbook@student.42.fr>            +#+  +:+       +#+        */
+/*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 20:04:23 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/15 19:50:49 by macbook          ###   ########.fr       */
+/*   Updated: 2026/02/16 05:31:06 by edpolat          ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "push_swap.h"
 void run_adaptive_strategy(t_control *ctrl)
@@ -16,11 +16,7 @@ void run_adaptive_strategy(t_control *ctrl)
 	float disorder;
 
 	disorder = disorder_calculate(ctrl->a);
-	/* 	if (ctrl->a->size <= 3)
-		{
-			sort_simple(ctrl);
-			return ;
-		} */
+
 	if (disorder == 0.0)
 	{
 		return;
@@ -30,9 +26,9 @@ void run_adaptive_strategy(t_control *ctrl)
 		sort_simple(ctrl);
 	}
 	else if (ctrl->mode == 2 || (ctrl->mode == 0 && disorder < 0.5))
-			sort_medium(ctrl);
-	/* else if (ctrl->mode == 3 || ctrl->mode == 0)
-		sort_complex(ctrl); */
+		sort_medium(ctrl);
+	else if (ctrl->mode == 3 || ctrl->mode == 0)
+		sort_complex(ctrl);
 }
 
 static float mistake_calculater(t_stack *stack)

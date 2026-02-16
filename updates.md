@@ -22,5 +22,6 @@ ENP-13.02.2026
 reverse-rotate operasyonlarını da yazıp simple algoritmayı yazmaya başlıyorum.
 
 
-Complex -- Turc Algorithm
+Complex -- Merge Algorithm
 
+complex algoritma hazır ama şu an good performance seviyesinde.... 5500 altına düşüremedim 500 sayı için. 100 sayı için de 1100 oluyor maksimum.
