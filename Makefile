@@ -17,6 +17,7 @@ SRCS    = main.c \
           algorithm_complex.c\
           algorithm_complex2.c\
           algorithm_complex_radix.c\
+          bench_mode.c
           
 OBJS        = $(SRCS:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 01:06:05 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/16 05:32:13 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/17 00:56:51 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,8 @@ int main(int ac, char **av)
 		return (1);
 	}
 	run_adaptive_strategy(&ctrl);
+	if(ctrl.bench == 1)
+		bench_mode_print(&ctrl);
 	free_stack(ctrl.a);
 	free_stack(ctrl.b);
 	return (0);

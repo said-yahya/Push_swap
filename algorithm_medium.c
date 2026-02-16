@@ -77,6 +77,8 @@ void sort_medium(t_control *ctrl)
     int chunk_size;
     int total_size;
 
+    if(ctrl->mode == 0)
+		ctrl->adaptive_checker = 2;
     indexing(ctrl->a);
     low = 0;
     total_size = ctrl->a->size;

@@ -6,7 +6,7 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 20:02:31 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/16 02:08:48 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/17 00:43:11 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,4 +81,14 @@ void	init_control(t_control *ctrl)
 	ctrl->bench = 0; /*  Default: Benchmark kapalı */
 	ctrl->op_count = 0;
 	ctrl->disorder = 0.0;
+	ctrl->benchmode.pa = 0;
+	ctrl->benchmode.pb = 0;
+	ctrl->benchmode.sa = 0;
+	ctrl->benchmode.sb = 0;
+	ctrl->benchmode.ss = 0;
+	ctrl->benchmode.ra = 0;
+	ctrl->benchmode.rb = 0;
+	ctrl->benchmode.rr = 0;
+	ctrl->benchmode.rra = 0;
+	ctrl->benchmode.rrb = 0;
 }

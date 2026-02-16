@@ -1,14 +1,14 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: macbook <macbook@student.42.fr>            +#+  +:+       +#+        */
+/*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 17:31:22 by ysaikhuj          #+#    #+#             */
-/*   Updated: 2026/02/16 21:07:50 by macbook          ###   ########.fr       */
+/*   Updated: 2026/02/17 01:42:14 by edpolat          ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
@@ -32,15 +32,33 @@ typedef struct s_stack
 	int		size;
 }			t_stack;
 
+typedef struct s_benchmode
+{
+	int	pa; // push a
+	int	pb; // push b
+	int	sa; // swap a
+	int	sb; // swap b
+	int	ss; // sa ve sb aynı anda
+	int	ra; // rotate a
+	int	rb; // rotate b
+	int	rr; // ra ve rb aynı anda
+	int	rra; // reverse rotate a
+	int	rrb; // reverse rotate b
+	int	rrr; // rra ve rrb aynı anda
+}			t_benchmode;
+
 typedef struct s_control
 {
 	t_stack	*a;		// Stack A'nın adresi
 	t_stack	*b;		// Stack B'nin adresi
 	int		mode;		// 0:Adaptive, 1:Simple, 2:Medium, 3:Complex
+	int		adaptive_checker; // 1:Simple, 2:Medium, 3:Complex
 	int		bench;		// bu ilerde ihtiyaç duyacağımız bir şey, pdfte sf. 16
 	float	disorder; // Başlangıçta hesaplanan düzensizlik oranı sf.16
 	int		op_count;	// Toplam yapılan işlem sayısı sf. 16
+	t_benchmode	benchmode;	// Her bir işlem türü için sayaçlar
 }			t_control;
+
 
 t_node	*ft_newnode(int value);
 void	ft_addback(t_stack *stack, t_node *new);
@@ -88,6 +106,7 @@ void	merge_to_b(t_control *ctrl, int left, int right);
 void	sort_three(t_control *ctrl);
 void	sort_three_b(t_control *ctrl);
 
+void    bench_mode_print(t_control *control);
 
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 20:17:11 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/15 13:49:31 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/17 01:14:22 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ void sort_simple(t_control *ctrl)
 {
 	int finder_size;
 
+	if(ctrl->mode == 0)
+		ctrl->adaptive_checker = 1;
 	while (ctrl->a->top)
 	{
 		finder_size = finder_minimum(ctrl);

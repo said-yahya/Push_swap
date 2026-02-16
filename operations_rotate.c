@@ -6,7 +6,7 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 17:28:39 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/14 17:29:08 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/17 00:44:49 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	ra(t_stack *a, int print, t_control *ctrl)
 	if (print)
 		write(1, "ra\n", 3);
 	ctrl->op_count++;
+	ctrl->benchmode.ra++;
 }
 
 void	rb(t_stack *b, int print, t_control *ctrl)
@@ -32,6 +33,7 @@ void	rb(t_stack *b, int print, t_control *ctrl)
 	if (print)
 		write(1, "rb\n", 3);
 	ctrl->op_count++;
+	ctrl->benchmode.rb++;
 }
 
 void	rr(t_stack *a, t_stack *b, int print, t_control *ctrl)
@@ -41,4 +43,5 @@ void	rr(t_stack *a, t_stack *b, int print, t_control *ctrl)
 	if (print)
 		write(1, "rr\n", 3);
 	ctrl->op_count++;
+	ctrl->benchmode.rr++;
 }

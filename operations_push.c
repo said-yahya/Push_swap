@@ -6,7 +6,7 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 15:07:18 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/14 14:13:20 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/17 00:43:52 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ void	pa(t_stack *a, t_stack *b, int print, t_control *control)
 	if (print)
 		write(1, "pa\n", 3);
 	control->op_count++;
+	control->benchmode.pa++;
 }
 
 void	pb(t_stack *a, t_stack *b, int print, t_control *control)
@@ -97,4 +98,5 @@ void	pb(t_stack *a, t_stack *b, int print, t_control *control)
 	if (print)
 		write(1, "pb\n", 3);
 	control->op_count++;
+	control->benchmode.pb++;
 }
