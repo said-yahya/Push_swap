@@ -1,14 +1,14 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   strategy.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: macbook <macbook@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 20:04:23 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/16 05:31:06 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/16 21:08:11 by macbook          ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #include "push_swap.h"
 void run_adaptive_strategy(t_control *ctrl)
@@ -28,7 +28,7 @@ void run_adaptive_strategy(t_control *ctrl)
 	else if (ctrl->mode == 2 || (ctrl->mode == 0 && disorder < 0.5))
 		sort_medium(ctrl);
 	else if (ctrl->mode == 3 || ctrl->mode == 0)
-		sort_complex(ctrl);
+		sort_complex_radix(ctrl);
 }
 
 static float mistake_calculater(t_stack *stack)

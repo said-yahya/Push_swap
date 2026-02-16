@@ -1,14 +1,14 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: macbook <macbook@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 17:31:22 by ysaikhuj          #+#    #+#             */
-/*   Updated: 2026/02/16 05:31:25 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/16 21:07:50 by macbook          ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
@@ -79,6 +79,7 @@ int		process_argument_strings(t_stack **a, char *av);
 
 void	sort_simple(t_control *ctrl);
 void	sort_medium(t_control *ctrl);
+void	sort_complex_radix(t_control *ctrl);
 void	sort_complex(t_control *ctrl);
 void	merge_sort_a(t_control *ctrl, int size);
 void	merge_sort_b(t_control *ctrl, int size);

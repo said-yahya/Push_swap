@@ -16,6 +16,7 @@ SRCS    = main.c \
           algorithm_medium.c\
           algorithm_complex.c\
           algorithm_complex2.c\
+          algorithm_complex_radix.c\
           
 OBJS        = $(SRCS:.c=.o)
 

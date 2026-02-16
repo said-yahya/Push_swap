@@ -1,14 +1,14 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   algorithm_complex2.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: macbook <macbook@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 05:28:52 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/16 05:30:28 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/16 15:50:40 by macbook          ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #include "push_swap.h"
 
@@ -72,10 +72,10 @@ void reverse_sorted_fastpath(t_control *ctrl)
 
 	size = ctrl->a->size;
 
-	while (ctrl->a->size > 0)
+	while (size > 0)
 		pb(ctrl->a, ctrl->b, 1, ctrl);
 
-	while (ctrl->b->size > 0)
+	while (size > 0)
 	{
 		pa(ctrl->a, ctrl->b, 1, ctrl);
 		ra(ctrl->a, 1, ctrl);
