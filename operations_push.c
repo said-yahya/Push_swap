@@ -6,27 +6,9 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 15:07:18 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/17 00:43:52 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/17 12:17:59 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*
--Kaynak yığının (örneğin A) en üstündeki düğümü (top) alırız.
--Bu düğümü bir geçici pointer'da tutarız.
--yığınının yeni top değerini, mevcut top'ın bir sonrakine (next) eşitleriz.
--Eğer yığında hala eleman varsa, yeni top'ın arkasını (prev) NULL yaparız ki 
-liste kopmasın.
--Yığının eleman sayısını (size) bir azaltırız.
-2. Takma
--Söktüğümüz düğümü hedef yığının (örneğin B) en tepesine yerleştiririz.
--Hedef boşsa: Düğümün next ve prev değerlerini NULL yaparız ve hedef 
-yığının top pointer'ını bu düğüme odaklarız.
--Hedefte eleman varsa: Düğümün next değerini hedefin mevcut top elemanına 
-bağlarız; hedefin eski top elemanının prev değerini ise bizim yeni 
-düğümümüze bağlarız.
-Düğümün prev değerini NULL yaparak en üstte olduğunu doğrularız.
---struct circular olduğu için ilk yazdığım algoritma loop'a giriyordu, düzelttim.
-*/
 
 #include "push_swap.h"
 

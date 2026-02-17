@@ -6,15 +6,15 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 09:19:19 by ysaikhuj          #+#    #+#             */
-/*   Updated: 2026/02/16 05:30:46 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/17 12:26:27 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node *ft_newnode(int value)
+t_node	*ft_newnode(int value)
 {
-	t_node *new;
+	t_node	*new;
 
 	new = (t_node *)malloc(sizeof(t_node));
 	if (!new)
@@ -26,12 +26,12 @@ t_node *ft_newnode(int value)
 	return (new);
 }
 
-void ft_addback(t_stack *stack, t_node *new)
+void	ft_addback(t_stack *stack, t_node *new)
 {
-	t_node *last;
+	t_node	*last;
 
 	if (!stack || !new)
-		return;
+		return ;
 	if (!(stack->top))
 	{
 		stack->top = new;
@@ -49,10 +49,10 @@ void ft_addback(t_stack *stack, t_node *new)
 	stack->size++;
 }
 
-void ft_delone(t_stack *stack, t_node *node)
+void	ft_delone(t_stack *stack, t_node *node)
 {
 	if (!stack || !stack->top || !node)
-		return;
+		return ;
 	if (stack->size == 1)
 		stack->top = NULL;
 	else
@@ -66,14 +66,14 @@ void ft_delone(t_stack *stack, t_node *node)
 	stack->size--;
 }
 
-void free_stack(t_stack *stack)
+void	free_stack(t_stack *stack)
 {
-	t_node *temp;
-	t_node *next;
-	int i;
+	t_node	*temp;
+	t_node	*next;
+	int		i;
 
 	if (!stack || stack->size == 0)
-		return;
+		return ;
 	temp = stack->top;
 	i = 0;
 	while (i < stack->size)
@@ -86,19 +86,13 @@ void free_stack(t_stack *stack)
 	free(stack);
 }
 
-void init_stack(t_stack *stack)
+void	indexing(t_stack *stack)
 {
-	stack->top = NULL;
-	stack->size = 0;
-}
-
-void indexing(t_stack *stack)
-{
-	t_node *curr;
-	t_node *compare;
-	int i;
-	int j;
-	int idx;
+	t_node	*curr;
+	t_node	*compare;
+	int		i;
+	int		j;
+	int		idx;
 
 	curr = stack->top;
 	i = 0;
@@ -119,3 +113,10 @@ void indexing(t_stack *stack)
 		i++;
 	}
 }
+
+/* 
+void	init_stack(t_stack *stack)
+{
+	stack->top = NULL;
+	stack->size = 0;
+} */

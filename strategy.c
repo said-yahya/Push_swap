@@ -1,43 +1,43 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   strategy.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: macbook <macbook@student.42.fr>            +#+  +:+       +#+        */
+/*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 20:04:23 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/16 21:08:11 by macbook          ###   ########.fr       */
+/*   Updated: 2026/02/17 14:43:10 by edpolat          ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "push_swap.h"
-void run_adaptive_strategy(t_control *ctrl)
+
+void	run_adaptive_strategy(t_control *ctrl)
 {
-	float disorder;
+	float	disorder;
 
 	disorder = disorder_calculate(ctrl->a);
-
+	ctrl->disorder = disorder;
 	if (disorder == 0.0)
-	{
-		return;
-	}
+		return ;
 	if (ctrl->mode == 1 || (ctrl->mode == 0 && disorder < 0.2))
 	{
 		sort_simple(ctrl);
 	}
-	else if (ctrl->mode == 2 || (ctrl->mode == 0 && disorder < 0.5))
+	else if (ctrl->mode == 2 || (ctrl->mode == 0 && disorder < 0.5)
+		|| (ctrl->mode == 0 && ctrl->a->size < 600))
 		sort_medium(ctrl);
-	else if (ctrl->mode == 3 || ctrl->mode == 0)
+	else if (ctrl->mode == 3 || (ctrl->mode == 0 && ctrl->a->size > 600))
 		sort_complex_radix(ctrl);
 }
 
-static float mistake_calculater(t_stack *stack)
+static float	mistake_calculater(t_stack *stack)
 {
-	t_node *a;
-	t_node *b;
-	int i;
-	int j;
-	float mistakes;
+	t_node	*a;
+	t_node	*b;
+	int		i;
+	int		j;
+	float	mistakes;
 
 	mistakes = 0;
 	a = stack->top;
@@ -59,11 +59,11 @@ static float mistake_calculater(t_stack *stack)
 	return (mistakes);
 }
 
-float disorder_calculate(t_stack *stack)
+float	disorder_calculate(t_stack *stack)
 {
-	float mistakes;
-	float total;
-	int x;
+	float	mistakes;
+	float	total;
+	int		x;
 
 	if (!stack || stack->size < 2)
 		return (0.0);

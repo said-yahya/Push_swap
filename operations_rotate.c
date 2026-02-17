@@ -6,11 +6,12 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 17:28:39 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/17 00:44:49 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/17 12:18:46 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 void	rotate(t_stack *stack)
 {
 	if (!stack || stack->size < 2)

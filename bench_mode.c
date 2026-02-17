@@ -6,7 +6,7 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 00:54:49 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/17 02:06:24 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/17 15:45:50 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ void	enp_putnbr_fd(int n)
 
 void	adaptive_writer(t_control *control)
 {
-	if(control->adaptive_checker == 1)
-		write(2, "Adaptive / O(n√n)\n", 20);
-	else if(control->adaptive_checker == 2)
-		write(2, "Adaptive / O(n2)\n", 18);
-	else if(control->adaptive_checker == 3)
+	if (control->adaptive_checker == 1)
+		write(2, "Adaptive / O(n2)\n", 20);
+	else if (control->adaptive_checker == 2)
+		write(2, "Adaptive / O(n√n)\n", 21);
+	else if (control->adaptive_checker == 3)
 		write(2, "Adaptive / O(nlogn) \n", 22);
 }
 
@@ -69,18 +69,23 @@ void	operation_type_writer(t_control *control)
 	write(2, " ", 1);
 }
 
-void    bench_mode_print(t_control *control)
+void	bench_mode_print(t_control *control)
 {
+	int	x;
+
+	x = (int)(control->disorder * 10000) % 100;
 	write(2, "disorder: ", 10);
 	enp_putnbr_fd(control->disorder * 100);
+	write(2, ".", 1);
+	enp_putnbr_fd(x);
 	write(2, "%\n", 2);
-	if(control->mode == 0)
+	if (control->mode == 0)
 		adaptive_writer(control);
-	else if(control->mode == 1)
+	else if (control->mode == 1)
 		write(2, "strategy: Simple\n", 17);
-	else if(control->mode == 2)
+	else if (control->mode == 2)
 		write(2, "strategy: Medium\n", 17);
-	else if(control->mode == 3)
+	else if (control->mode == 3)
 		write(2, "strategy: Complex\n", 18);
 	write(2, "totat_ops: ", 12);
 	enp_putnbr_fd(control->op_count);

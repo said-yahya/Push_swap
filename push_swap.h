@@ -6,7 +6,7 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 17:31:22 by ysaikhuj          #+#    #+#             */
-/*   Updated: 2026/02/17 01:42:14 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/17 15:43:23 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
-# include "Libft/libft.h"
-#include <stdio.h>
+# include <stdio.h>
 
 typedef struct s_node
 {
@@ -34,31 +33,30 @@ typedef struct s_stack
 
 typedef struct s_benchmode
 {
-	int	pa; // push a
-	int	pb; // push b
-	int	sa; // swap a
-	int	sb; // swap b
-	int	ss; // sa ve sb aynı anda
-	int	ra; // rotate a
-	int	rb; // rotate b
-	int	rr; // ra ve rb aynı anda
-	int	rra; // reverse rotate a
-	int	rrb; // reverse rotate b
-	int	rrr; // rra ve rrb aynı anda
-}			t_benchmode;
+	int	pa;
+	int	pb;
+	int	sa;
+	int	sb;
+	int	ss;
+	int	ra;
+	int	rb;
+	int	rr;
+	int	rra;
+	int	rrb;
+	int	rrr;
+}		t_benchmode;
 
 typedef struct s_control
 {
-	t_stack	*a;		// Stack A'nın adresi
-	t_stack	*b;		// Stack B'nin adresi
-	int		mode;		// 0:Adaptive, 1:Simple, 2:Medium, 3:Complex
-	int		adaptive_checker; // 1:Simple, 2:Medium, 3:Complex
-	int		bench;		// bu ilerde ihtiyaç duyacağımız bir şey, pdfte sf. 16
-	float	disorder; // Başlangıçta hesaplanan düzensizlik oranı sf.16
-	int		op_count;	// Toplam yapılan işlem sayısı sf. 16
-	t_benchmode	benchmode;	// Her bir işlem türü için sayaçlar
-}			t_control;
-
+	t_stack		*a;
+	t_stack		*b;
+	t_benchmode	benchmode;
+	int			mode;
+	int			adaptive_checker;
+	int			bench;
+	float		disorder;
+	int			op_count;
+}				t_control;
 
 t_node	*ft_newnode(int value);
 void	ft_addback(t_stack *stack, t_node *new);
@@ -91,9 +89,16 @@ int		is_duplicate(t_stack *stack, int value);
 int		handle_flags(char *arg, t_control *ctrl);
 long	ft_atol(const char *nptr, int *error);
 int		add_number_to_stack(t_stack **a, char *str);
-int		parse_and_fill_stack(t_stack **a, int ac, char **av, t_control *ctrl);
 void	run_adaptive_strategy(t_control *ctrl);
+int		parse_and_fill_stack(t_stack **a, int ac, char **av, t_control *ctrl);
 int		process_argument_strings(t_stack **a, char *av);
+
+int		ft_isdigit(int c);
+char	**ft_split(char const *s, char c);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+size_t	ft_strlen(const char *s);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+char	*ft_strdup(const char *s);
 
 void	sort_simple(t_control *ctrl);
 void	sort_medium(t_control *ctrl);
@@ -106,7 +111,6 @@ void	merge_to_b(t_control *ctrl, int left, int right);
 void	sort_three(t_control *ctrl);
 void	sort_three_b(t_control *ctrl);
 
-void    bench_mode_print(t_control *control);
-
+void	bench_mode_print(t_control *control);
 
 #endif

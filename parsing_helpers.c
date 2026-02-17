@@ -6,7 +6,7 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 19:59:43 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/16 01:52:26 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/17 12:20:20 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,24 +59,20 @@ long	ft_atol(const char *nptr, int *error)
 	}
 	return (result * sign);
 }
+
 int	is_number(char *str)
 {
 	int	i;
 
 	if (!str)
 		return (0);
-
 	i = 0;
-
 	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 		i++;
-
 	if (str[i] == '+' || str[i] == '-')
 		i++;
-
 	if (!str[i])
 		return (0);
-
 	while (str[i])
 	{
 		if (!ft_isdigit(str[i]))
@@ -116,7 +112,7 @@ int	process_argument_strings(t_stack **a, char *av)
 	temp_args = ft_split(av, ' ');
 	if (!temp_args || !temp_args[0])
 	{
-			free_matrix(temp_args);
+		free_matrix(temp_args);
 		return (0);
 	}
 	j = 0;

@@ -1,16 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   libft_helpers.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/09 20:30:34 by edpolat           #+#    #+#             */
-/*   Updated: 2026/01/22 11:12:37 by edpolat          ###   ########.fr       */
+/*   Created: 2026/02/17 13:10:10 by edpolat           #+#    #+#             */
+/*   Updated: 2026/02/17 13:13:26 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < n && s1[i] != 0 && s2[i] != 0 && s1[i] == s2[i])
+		i++;
+	if (n == 0 || i == n)
+		return (0);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+}
 
 static size_t	wordcount(char const *ptr, char c)
 {

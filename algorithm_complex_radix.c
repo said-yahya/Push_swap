@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algorithm_complex_radix.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysaikhuj <ysaikhuj@student.42istanbul.com  +#+  +:+       +#+        */
+/*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 21:12:55 by ysaikhuj          #+#    #+#             */
-/*   Updated: 2026/02/16 21:12:58 by ysaikhuj         ###   ########.tr       */
+/*   Updated: 2026/02/17 13:22:51 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	sort_complex_radix(t_control *ctrl)
 		j = 0;
 		while (j++ < size)
 		{
-			if (((ctrl->a->top->index >> 1) & 1) == 1)
+			if (((ctrl->a->top->index >> i) & 1) == 1)
 				ra(ctrl->a, 1, ctrl);
 			else
 				pb(ctrl->a, ctrl->b, 1, ctrl);

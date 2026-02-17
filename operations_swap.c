@@ -6,22 +6,9 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 01:05:38 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/17 00:45:06 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/17 12:18:56 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/* 
-elimizeki node'lar:
-last-first-second-third-.....-last şeklinde bi circle
-last-second-first-third-.....-last elde etmek istiyoruz.
--last->next second olacak,
--second->next first olacak,
--first ->next third olacak
--last->prev second olacak,
--second->prev first olacak,
--first ->prev third olacak
--Stack ->top second olacak.
-*/
 
 #include "push_swap.h"
 

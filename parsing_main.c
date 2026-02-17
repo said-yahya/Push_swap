@@ -6,7 +6,7 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 20:02:31 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/17 00:43:11 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/17 15:44:53 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,16 @@ int	parse_and_fill_stack(t_stack **a, int ac, char **av, t_control *ctrl)
 	int	flag_res;
 
 	i = 1;
-	flag_res = handle_flags(av[1], ctrl);
-	if (flag_res == -1)
-		return (0);
-	else if (flag_res == 1)
-		i++;
 	while (i < ac)
 	{
+		flag_res = handle_flags(av[i], ctrl);
+		if (flag_res == -1)
+			return (0);
+		else if (flag_res == 1)
+		{
+			i++;
+			continue ;
+		}
 		if (!process_argument_strings(a, av[i]))
 			return (0);
 		i++;
@@ -68,7 +71,6 @@ void	free_matrix(char **str)
 
 void	init_control(t_control *ctrl)
 {
-	/* 1. Stack yapıları için yer ayır */
 	ctrl->a = (t_stack *)malloc(sizeof(t_stack));
 	ctrl->b = (t_stack *)malloc(sizeof(t_stack));
 	if (!ctrl->a || !ctrl->b)
@@ -77,8 +79,8 @@ void	init_control(t_control *ctrl)
 	ctrl->a->size = 0;
 	ctrl->b->top = NULL;
 	ctrl->b->size = 0;
-	ctrl->mode = 0;/* Default: --adaptive */
-	ctrl->bench = 0; /*  Default: Benchmark kapalı */
+	ctrl->mode = 0;
+	ctrl->bench = 0;
 	ctrl->op_count = 0;
 	ctrl->disorder = 0.0;
 	ctrl->benchmode.pa = 0;
@@ -91,4 +93,13 @@ void	init_control(t_control *ctrl)
 	ctrl->benchmode.rr = 0;
 	ctrl->benchmode.rra = 0;
 	ctrl->benchmode.rrb = 0;
+	ctrl->benchmode.rrr = 0;
+}
+
+int	ft_isdigit(int c)
+{
+	if (!(c > 47 && c < 58))
+		return (0);
+	else
+		return (1);
 }
