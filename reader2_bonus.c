@@ -6,11 +6,12 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 16:12:52 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/17 17:05:52 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/20 18:30:18 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap_bonus.h"
+#include "push_swap_bonus.h"
+
 char	*ft_strjoin_f(char *s1, char *s2)
 {
 	size_t	i;
@@ -57,15 +58,3 @@ char	*ft_strchr(char *s, int c)
 		return ((char *)&s[j]);
 	return (NULL);
 }
-
-/* size_t	ft_strlen(char *s)
-{
-	size_t	i;
-
-	i = 0;
-	if (!s)
-		return (0);
-	while (s[i])
-		i++;
-	return (i);
-} */

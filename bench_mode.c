@@ -6,7 +6,7 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 00:54:49 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/17 15:45:50 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/20 21:20:47 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,11 +82,11 @@ void	bench_mode_print(t_control *control)
 	if (control->mode == 0)
 		adaptive_writer(control);
 	else if (control->mode == 1)
-		write(2, "strategy: Simple\n", 17);
+		write(2, "strategy: Simple / O(n2)\n", 17);
 	else if (control->mode == 2)
-		write(2, "strategy: Medium\n", 17);
+		write(2, "strategy: Medium / O(n√n)\n", 17);
 	else if (control->mode == 3)
-		write(2, "strategy: Complex\n", 18);
+		write(2, "strategy: Complex / O(nlogn) \n", 18);
 	write(2, "totat_ops: ", 12);
 	enp_putnbr_fd(control->op_count);
 	write(2, "\n", 1);

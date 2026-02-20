@@ -6,7 +6,7 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 20:02:31 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/17 15:44:53 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/20 21:27:05 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,7 @@ void	init_control(t_control *ctrl)
 	ctrl->benchmode.rra = 0;
 	ctrl->benchmode.rrb = 0;
 	ctrl->benchmode.rrr = 0;
+	ctrl->doublecheck = 0;
 }
 
 int	ft_isdigit(int c)

@@ -6,7 +6,7 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 01:06:05 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/17 12:17:44 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/20 18:31:37 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int	main(int ac, char **av)
 		return (1);
 	if (!parse_and_fill_stack(&(ctrl.a), ac, av, &ctrl))
 	{
+		free_stack(ctrl.a);
+		free_stack(ctrl.b);
 		write(2, "Error\n", 6);
 		return (1);
 	}

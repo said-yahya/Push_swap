@@ -28,4 +28,7 @@ complex algoritma hazır ama şu an good performance seviyesinde.... 5500 altın
 
 Radix method ekledim complex sort icin merge sort array ile calisir gibi calistigindan dolayi 500 sayida ortalama 7700-7800 islem yapmakta, radix ile 500 sayida islam sayisini 6750'ye kadar indirdim ve 100 sayida 1050 islemde fix calisiyor. performns acisindan good araligindayiz hala fakat merge sort icin sanirim 10 fonksyon yazdin radiz 1 fonksyonla isi hallediyor bence bunu kullanalim bitwise mantigi kullaniliyor anlamasi zor degil sana anlatirim yarin Allahin izniyle. 
 
-Bench mode kısmını hallettim. Yarın operasyonlardaki int print kısmına bi bakıcam gereksizse güncelleyeceğim onları da. Bi de anlarsam radix'in araalığını excelent aralığına çekmek için ne yapılabilir ona bakacağım.
+Bench mode kısmını hallettim. Yarın operasyonlardaki int print kısmına bi bakıcam gereksizse güncelleyeceğim onları da. Bi de anlarsam radix'in aralığını excelent aralığına çekmek için ne yapılabilir ona bakacağım.
+
+
+Bonus kısım okey, operasyonlardaki print kısmı bench printte içime yaradı, bir de bonus kısımda da gerekiyordu değiştirmedim o yüzden hamle fonksiyonlarını. norm hatası da yok sadece header eksik.

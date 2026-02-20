@@ -6,7 +6,7 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 16:07:42 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/17 17:06:45 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/20 20:31:48 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,7 @@ char	*ft_strchr(char *s, int c);
 char	*line_here(char *remainder);
 char	*nextline(char *remainder);
 char	*get_next_line(int fd);
+void	free_stackss(t_control ctrl);
+void	ok_or_ko(t_control ctrl);
+
 #endif

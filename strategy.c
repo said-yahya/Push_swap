@@ -6,7 +6,7 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 20:04:23 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/17 16:01:28 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/20 19:58:18 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ void	run_adaptive_strategy(t_control *ctrl)
 	ctrl->disorder = disorder;
 	if (disorder == 0.0)
 		return ;
-	if (ctrl->mode == 1 || (ctrl->mode == 0 && disorder < 0.2))
-	{
+	if (ctrl->mode == 0 && ctrl->a->size <= 5)
 		sort_simple(ctrl);
-	}
+	else if (ctrl->mode == 1 || (ctrl->mode == 0 && disorder < 0.2))
+		sort_simple(ctrl);
 	else if (ctrl->mode == 2 || (ctrl->mode == 0 && disorder < 0.5)
 		|| (ctrl->mode == 0 && ctrl->a->size < 600))
 		sort_medium(ctrl);

@@ -6,7 +6,7 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 17:31:22 by ysaikhuj          #+#    #+#             */
-/*   Updated: 2026/02/17 15:43:23 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/20 21:26:10 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ typedef struct s_control
 	int			bench;
 	float		disorder;
 	int			op_count;
+	int			doublecheck;
 }				t_control;
 
 t_node	*ft_newnode(int value);
@@ -100,6 +101,7 @@ size_t	ft_strlen(const char *s);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strdup(const char *s);
 
+void	sort_three(t_control *ctrl);
 void	sort_simple(t_control *ctrl);
 void	sort_medium(t_control *ctrl);
 void	sort_complex_radix(t_control *ctrl);

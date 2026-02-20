@@ -6,7 +6,7 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 09:19:19 by ysaikhuj          #+#    #+#             */
-/*   Updated: 2026/02/17 12:26:27 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/20 17:23:37 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	free_stack(t_stack *stack)
 	t_node	*next;
 	int		i;
 
-	if (!stack || stack->size == 0)
+	if (!stack && stack->size == 0)
 		return ;
 	temp = stack->top;
 	i = 0;
@@ -113,10 +113,3 @@ void	indexing(t_stack *stack)
 		i++;
 	}
 }
-
-/* 
-void	init_stack(t_stack *stack)
-{
-	stack->top = NULL;
-	stack->size = 0;
-} */
