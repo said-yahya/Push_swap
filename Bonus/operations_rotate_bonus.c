@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations_rotate_bonus.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: ysaikhuj <ysaikhuj@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/14 17:28:39 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/21 00:59:09 by edpolat          ###   ########.fr       */
+/*   Created: 2026/02/21 16:09:00 by ysaikhuj          #+#    #+#             */
+/*   Updated: 2026/02/21 16:09:03 by ysaikhuj         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 

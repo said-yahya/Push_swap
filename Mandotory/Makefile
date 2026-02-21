@@ -15,25 +15,24 @@ SRCS    = operations_push.c \
           algorithm_complex_radix.c \
           bench_mode.c\
           libft_helpers.c\
-          libft_helpers2.c
-MAIN    = main.c
-COMMON_OBJS = $(SRCS:.c=.o)
-MAIN_OBJS   = $(MAIN:.c=.o)
+          libft_helpers2.c\
+          main.c
+
+OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(MAIN_OBJS) $(COMMON_OBJS)
-	$(CC) $(CFLAGS) $(MAIN_OBJS) $(COMMON_OBJS) -o $(NAME)
-
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS) $(BONUS_OBJ) $(COMMON_OBJS) $(MAIN_OBJS)
+	rm -f $(OBJS)
 
 fclean: clean
-	rm -f $(NAME) $(BONUS_NAME)
+	rm -f $(NAME)
 
 re: fclean all
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: ysaikhuj <ysaikhuj@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/09 17:31:22 by ysaikhuj          #+#    #+#             */
-/*   Updated: 2026/02/20 21:26:10 by edpolat          ###   ########.fr       */
+/*   Created: 2026/02/21 16:07:39 by ysaikhuj          #+#    #+#             */
+/*   Updated: 2026/02/21 16:07:42 by ysaikhuj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

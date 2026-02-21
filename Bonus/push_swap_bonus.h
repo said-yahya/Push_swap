@@ -6,7 +6,7 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 16:07:42 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/21 01:10:54 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/21 01:10:54 by edpolat          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ int		handle_flags(char *arg, t_control *ctrl);
 long	ft_atol(const char *nptr, int *error);
 int		add_number_to_stack(t_stack **a, char *str);
 void	run_adaptive_strategy(t_control *ctrl);
-int		parse_and_fill_stack(t_stack **a, int ac, char **av, t_control *ctrl);
+int		parse_and_fill_stack(t_stack **a, int ac, char **av);
 int		process_argument_strings(t_stack **a, char *av);
 
 int		ft_isdigit(int c);
@@ -113,6 +113,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 size_t	ft_strlen(const char *s);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strdup(const char *s);
-
 
 #endif

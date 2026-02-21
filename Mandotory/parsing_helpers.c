@@ -6,7 +6,7 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 19:59:43 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/20 21:49:23 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/20 21:49:23 by edpolat          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ int	handle_flags(char *arg, t_control *ctrl)
 		ctrl->bench = 1;
 	else if (ft_strncmp(arg, "--adaptive", 11) == 0 && ctrl->doublecheck == 0)
 		ctrl->mode = 0;
-	else if(ctrl->doublecheck != 0)
+	else if (ctrl->doublecheck != 0)
 		return (-1);
-	if(ctrl->bench == 1)
-		return(1);
+	if (ctrl->bench == 1)
+		return (1);
 	ctrl->doublecheck ++;
 	return (1);
 }

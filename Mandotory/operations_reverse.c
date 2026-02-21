@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations_reverse.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: ysaikhuj <ysaikhuj@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/13 15:08:09 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/17 00:44:29 by edpolat          ###   ########.fr       */
+/*   Created: 2026/02/21 16:05:14 by ysaikhuj          #+#    #+#             */
+/*   Updated: 2026/02/21 16:05:18 by ysaikhuj         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -6,16 +6,15 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 20:02:31 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/21 15:05:07 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/21 15:05:07 by edpolat          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
 
-int	parse_and_fill_stack(t_stack **a, int ac, char **av, t_control *ctrl)
+int	parse_and_fill_stack(t_stack **a, int ac, char **av)
 {
 	int	i;
-	int	flag_res;
 
 	i = 1;
 	while (i < ac)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft_helpers2_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: ysaikhuj <ysaikhuj@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/17 13:14:59 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/21 00:58:56 by edpolat          ###   ########.fr       */
+/*   Created: 2026/02/21 16:10:46 by ysaikhuj          #+#    #+#             */
+/*   Updated: 2026/02/21 16:10:50 by ysaikhuj         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,10 @@ char	*ft_strdup(const char *s)
 	}
 	cpy[j] = 0;
 	return (cpy);
+}
+
+void	free_stackss(t_control ctrl)
+{
+	free_stack(ctrl.a);
+	free_stack(ctrl.b);
 }

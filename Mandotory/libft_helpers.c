@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft_helpers.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: ysaikhuj <ysaikhuj@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/17 13:10:10 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/17 13:13:26 by edpolat          ###   ########.fr       */
+/*   Created: 2026/02/21 16:12:17 by ysaikhuj          #+#    #+#             */
+/*   Updated: 2026/02/21 16:12:19 by ysaikhuj         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
