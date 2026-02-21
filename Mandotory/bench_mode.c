@@ -6,7 +6,7 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 00:54:49 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/20 21:20:47 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/21 10:58:22 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	enp_putnbr_fd(int n)
 void	adaptive_writer(t_control *control)
 {
 	if (control->adaptive_checker == 1)
-		write(2, "Adaptive / O(n2)\n", 20);
+		write(2, "Adaptive / O(n²)\n", 20);
 	else if (control->adaptive_checker == 2)
 		write(2, "Adaptive / O(n√n)\n", 21);
 	else if (control->adaptive_checker == 3)
@@ -82,7 +82,7 @@ void	bench_mode_print(t_control *control)
 	if (control->mode == 0)
 		adaptive_writer(control);
 	else if (control->mode == 1)
-		write(2, "strategy: Simple / O(n2)\n", 17);
+		write(2, "strategy: Simple / O(n²)\n", 17);
 	else if (control->mode == 2)
 		write(2, "strategy: Medium / O(n√n)\n", 17);
 	else if (control->mode == 3)
