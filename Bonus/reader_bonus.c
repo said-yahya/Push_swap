@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bonus_reader.c                                     :+:      :+:    :+:   */
+/*   reader_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 16:10:59 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/17 17:05:29 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/21 14:32:56 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*get_next_line(int fd)
 {
-	ssize_t		bytes_read;
+	size_t		bytes_read;
 	char		*buffer;
 	char		*line;
 	static char	*remainder;

@@ -6,7 +6,7 @@
 /*   By: edpolat <edpolat@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 20:02:31 by edpolat           #+#    #+#             */
-/*   Updated: 2026/02/21 00:59:24 by edpolat          ###   ########.fr       */
+/*   Updated: 2026/02/21 15:05:07 by edpolat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,6 @@ int	parse_and_fill_stack(t_stack **a, int ac, char **av, t_control *ctrl)
 	i = 1;
 	while (i < ac)
 	{
-		flag_res = handle_flags(av[i], ctrl);
-		if (flag_res == -1)
-			return (0);
-		else if (flag_res == 1)
-		{
-			i++;
-			continue ;
-		}
 		if (!process_argument_strings(a, av[i]))
 			return (0);
 		i++;
