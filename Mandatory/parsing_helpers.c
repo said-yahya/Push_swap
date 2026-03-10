@@ -14,7 +14,7 @@
 
 int	handle_flags(char *arg, t_control *ctrl)
 {
-	if (ft_strncmp(arg, "--", 2) != 0 && ctrl->doublecheck == 0)
+	if (ft_strncmp(arg, "--", 2) != 0)
 		return (0);
 	if (ft_strncmp(arg, "--simple", 9) == 0 && ctrl->doublecheck == 0)
 		ctrl->mode = 1;
